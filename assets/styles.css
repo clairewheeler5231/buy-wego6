@@ -498,3 +498,30 @@ footer{margin-top:0}
 /* 11. The breathe animation overwrote the centring translate, pushing the
        closing glow mostly off the right edge. */
 .closing::before{translate:-50% 0}
+
+/* ── exit intent ───────────────────────────────────────────────────────────
+   Blur the page in place behind a glass card rather than a flat white
+   takeover — the takeover reads as an ad interstitial and gets dismissed
+   before it is read. */
+.xi{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:1.25rem;
+    background:rgba(18,48,57,.42);backdrop-filter:blur(7px) saturate(120%);
+    -webkit-backdrop-filter:blur(7px) saturate(120%);
+    opacity:0;transition:opacity .22s ease}
+.xi.is-on{opacity:1}
+.xi-card{position:relative;width:min(430px,100%);text-align:center;
+    background:var(--paper);border-radius:22px;padding:2.1rem 1.6rem 1.8rem;
+    box-shadow:0 26px 70px -18px rgba(11,38,45,.5);
+    transform:translateY(14px) scale(.97);transition:transform .24s cubic-bezier(.2,.8,.3,1)}
+.xi.is-on .xi-card{transform:none}
+.xi-card img{width:150px;height:150px;object-fit:contain;margin:-.6rem auto .5rem;display:block}
+.xi-card h2{font-size:clamp(1.35rem,1.1rem + 1vw,1.7rem);margin:0 0 .5rem;max-width:none}
+.xi-card p{margin:0 0 1.35rem;color:var(--ink-2);font-size:1.02rem}
+.xi-card .btn{width:100%;justify-content:center}
+.xi-x{position:absolute;top:.5rem;right:.6rem;width:40px;height:40px;border:0;cursor:pointer;
+    background:transparent;color:var(--ink-2);font-size:1.7rem;line-height:1;border-radius:50%}
+.xi-x:hover{background:rgba(18,48,57,.08)}
+.xi-x:focus-visible,.xi-card .btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  .xi,.xi-card{transition:none}
+  .xi-card{transform:none}
+}
