@@ -124,7 +124,7 @@ a{color:var(--ember)}
 .facts li svg{flex:none}
 
 /* ---------- Sections ---------- */
-.section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.section{padding-block:clamp(2.4rem,4.4vw,3.9rem)}
 .eyebrow{
   display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.16em;
   text-transform:uppercase;color:var(--ember);margin-bottom:1rem;
@@ -432,9 +432,9 @@ footer{background:var(--dusk);color:#E4F2EF;padding:44px 0 54px;margin-top:20px}
 
 /* 1. Body copy: the reset killed all margins, so headings touched their text
       and paragraphs ran together at ~127 characters per line. */
-.section .wrap > p{max-width:62ch;margin:0}
-.section .wrap > p + p{margin-top:1.15rem}
-.section h2{margin-bottom:1.3rem;max-width:28ch}
+.section .wrap > p{max-width:68ch;margin:0}
+.section .wrap > p + p{margin-top:1.05rem}
+.section h2{margin-bottom:1.05rem;max-width:34ch}
 
 /* 3. A 20px page-background stripe was showing between the dark closing
       section and the dark footer. */
