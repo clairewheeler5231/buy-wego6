@@ -280,7 +280,7 @@ a{color:var(--ember)}
   padding-block:clamp(4rem,9vw,7rem);
 }
 .closing::before{
-  content:"";position:absolute;left:50%;bottom:-42%;transform:translateX(-50%);
+  content:"";position:absolute;left:50%;bottom:-42%;
   width:130vw;max-width:1700px;aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;
   background:radial-gradient(closest-side at 50% 100%,rgba(5,163,143,.50),rgba(47,217,192,.22) 55%,transparent 78%);
   animation:breathe 10s ease-in-out infinite alternate;z-index:0;
@@ -423,3 +423,78 @@ footer{background:var(--dusk);color:#E4F2EF;padding:44px 0 54px;margin-top:20px}
   background:var(--sun-2);color:#04302A;font-weight:700;font-size:12.5px;letter-spacing:.04em;
   text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap;
   box-shadow:0 4px 12px rgba(5,163,143,.28)}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CRAFT PASS — the generated markup uses different class names than the
+   original one-page comp, so several components were running on browser
+   defaults. These rules bind the real markup to the design system.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Body copy: the reset killed all margins, so headings touched their text
+      and paragraphs ran together at ~127 characters per line. */
+.section .wrap > p{max-width:62ch;margin:0}
+.section .wrap > p + p{margin-top:1.15rem}
+.section h2{margin-bottom:1.3rem;max-width:28ch}
+
+/* 3. A 20px page-background stripe was showing between the dark closing
+      section and the dark footer. */
+footer{margin-top:0}
+
+/* 4. Fraunces has a flat-topped 3 — "387 mg" scanned as "587 mg" and
+      "3 Monate" as "5 Monate". Digits go in the grotesk, words stay serif. */
+.amount,.num{font-family:var(--font-body);font-weight:800;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums}
+.plan h3{font-family:var(--font-body);font-weight:700;letter-spacing:-.01em}
+
+/* 5. FAQ: the comp styled .faq-list, the markup emits .faq — it was rendering
+      with the native marker AND our chevron, at a 30px tap target. */
+.faq details{background:#fff;border-radius:20px;border:1px solid rgba(18,48,57,.10);
+  box-shadow:var(--shadow-soft);overflow:clip}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:1.15rem 1.4rem;min-height:56px;font-weight:700;cursor:pointer;
+  color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::marker{content:""}
+.faq summary:hover{color:var(--ember)}
+.faq summary:focus-visible{outline:3px solid var(--ember);outline-offset:-3px}
+.faq .chev{flex:0 0 auto;transition:transform .2s ease}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq .antwort{padding:0 1.4rem 1.3rem;margin:0;color:var(--ink-soft);max-width:70ch}
+@media (prefers-reduced-motion:reduce){.faq .chev{transition:none}}
+
+/* 6. Price section: no heading, and the cards themselves were not clickable —
+      the three largest surfaces in the money section were dead pixels. */
+.preise h2{margin-bottom:1.4rem}
+.plan{display:flex;flex-direction:column}
+.plan .btn{margin-top:auto;width:100%;justify-content:center}
+.plans-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:2.4rem}
+.plans-cta .guarantee{justify-content:center}
+
+/* 7. The wordmark was an underlined link reading "WEGO 6". */
+.wordmark{text-decoration:none;gap:.12rem}
+
+/* 8. The secondary hero button was 2px mint on a mint gradient. */
+.btn--ghost{border-color:rgba(22,48,58,.30);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--sun-2);background:var(--gold-tint)}
+
+/* 9. One green, not three. Inline SVG strokes now inherit. */
+.guarantee{color:#14705C}
+.guarantee svg,.ticks li svg{stroke:currentColor}
+.closing .mini{color:rgba(231,247,244,.92)}
+.closing .mini svg{stroke:currentColor}
+
+/* 2. Mobile: an 8-item nav wrapped to three rows and stayed sticky, eating a
+      quarter of the viewport; in-page anchors then landed under it. */
+[id]{scroll-margin-top:92px}
+.topbar{background:rgba(246,250,250,.97)}
+@media (max-width:900px){
+  .topnav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;justify-content:flex-start}
+  .topnav::-webkit-scrollbar{display:none}
+  [id]{scroll-margin-top:118px}
+  .plan--best{order:-1}
+}
+
+/* 11. The breathe animation overwrote the centring translate, pushing the
+       closing glow mostly off the right edge. */
+.closing::before{translate:-50% 0}
