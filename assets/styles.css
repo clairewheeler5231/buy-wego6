@@ -529,3 +529,27 @@ footer{margin-top:0}
   .xi,.xi-card{transition:none}
   .xi-card{transform:none}
 }
+
+/* ── topbar hardening ──────────────────────────────────────────────────────
+   The header button once rendered the page's full CTA sentence (up to 177
+   chars). At 1195px wide it squeezed .topnav to width:0 and stacked NL's seven
+   links into seven rows, with the button overlapping the wordmark. The label is
+   now a short fixed string, and these rules make that class of collapse
+   impossible regardless of label length. */
+.topbar-in{flex-wrap:nowrap}
+.topnav{flex:1 1 auto;min-width:0}
+.topbar-in > .btn{flex:0 0 auto;white-space:nowrap;max-width:34ch;
+  overflow:hidden;text-overflow:ellipsis}
+.wordmark{flex:0 0 auto}
+
+/* On a narrow screen one row cannot hold wordmark + nav + button: the nav lost
+   to 24px. Two rows — brand and CTA above, the nav scrolling horizontally below. */
+@media (max-width:720px){
+  .topbar-in{flex-wrap:wrap;row-gap:.55rem;align-items:center}
+  .wordmark{order:1}
+  .topbar-in > .btn{order:2;margin-left:auto;max-width:20ch}
+  .topnav{order:3;flex:1 0 100%;min-width:100%;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:.15rem}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{white-space:nowrap}
+}
