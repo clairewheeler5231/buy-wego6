@@ -411,3 +411,7 @@ footer{background:var(--dusk);color:#F3E6DC;padding:44px 0 54px;margin-top:20px}
 .legal-page h2{font-family:var(--font-display);font-variation-settings:var(--fraunces-axes);
   font-weight:700;font-size:clamp(20px,2.2vw,26px);margin:1.7em 0 .5em}
 .legal-page p{max-width:74ch;color:var(--ink-soft);line-height:1.72;margin:0 0 1em}
+
+/* Pack shot inside a price card */
+.plan-art{width:100%;max-width:190px;height:auto;margin:0 auto 6px;display:block}
+.plan--best .plan-art{max-width:215px}
