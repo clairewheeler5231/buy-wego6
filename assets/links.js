@@ -15,11 +15,7 @@
 
 window.WEGO6_LINKS = {
 
-  /* ── UK ── PENDING: advertiser has not sent the approval to Jennie yet.
-     Paste the UK tracking URL between the quotes and it goes live immediately.
-     While `base` is empty, /uk/go/ sends the visitor back to the UK hub
-     instead of dead-ending. */
-  uk: { base: "", org: "wego6uk" },
+  uk: { base: "https://www.slmw4qtrk.com/ZZ2GX/MPWX6H/", org: "wego6uk" }, /* offer 378 · UK · $80 */
 
   /* ── live now ── */
   de: { base: "https://www.slmw4qtrk.com/ZZ2GX/DDD68M/", org: "wego6de" }, /* offer 230 · DE/AT/CH v8 · $80 */
