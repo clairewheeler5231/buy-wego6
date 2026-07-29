@@ -602,3 +602,27 @@ footer .copy{text-align:center}
    its h3 26px below theirs and broke the row's alignment. Emphasis now comes from
    the ring, badge and lift — not from a size difference that de-aligns the row. */
 .plan--best .plan-art{max-width:190px}
+
+/* dismiss link — an honest way out beats a hidden close button */
+.xi-dismiss{display:block;margin:.9rem auto 0;background:none;border:0;cursor:pointer;
+  color:var(--ink-2,#4A626B);font:inherit;font-size:.88rem;text-decoration:underline;
+  text-underline-offset:3px;padding:.35rem .6rem;border-radius:6px}
+.xi-dismiss:hover{color:var(--ink,#16303A)}
+.xi-dismiss:focus-visible{outline:3px solid var(--ember);outline-offset:2px}
+
+/* ── sticky CTA: keeps the offer one tap away without covering the price table ── */
+.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;padding:.7rem clamp(.8rem,3vw,1.4rem);
+  background:rgba(18,48,57,.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,.1);box-shadow:0 -8px 26px -10px rgba(11,38,45,.55);
+  transform:translateY(105%);transition:transform .24s cubic-bezier(.2,.8,.3,1)}
+.stickycta.is-on{transform:none}
+.stickycta[hidden]{display:none!important}      /* author display must not beat [hidden] */
+.stickycta span{color:rgba(231,247,244,.9);font-size:.86rem;font-weight:600;line-height:1.25;
+  max-width:46%}
+.stickycta .btn{flex:0 0 auto;white-space:nowrap;padding:.72rem 1.15rem;font-size:.92rem}
+@media (max-width:420px){
+  .stickycta span{font-size:.78rem;max-width:44%}
+  .stickycta .btn{padding:.66rem .9rem;font-size:.86rem}
+}
+@media (prefers-reduced-motion:reduce){.stickycta{transition:none}}
