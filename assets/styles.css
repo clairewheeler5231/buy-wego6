@@ -626,3 +626,21 @@ footer .copy{text-align:center}
   .stickycta .btn{padding:.66rem .9rem;font-size:.86rem}
 }
 @media (prefers-reduced-motion:reduce){.stickycta{transition:none}}
+
+/* Contextual link from a hub section to the page that owns that query.
+   Reads as an editorial "more on this", not a nav element. */
+.section .wrap > p.seealso{
+  margin-top:1.15rem;
+  padding-left:.95rem;
+  border-left:3px solid var(--peach-deep);
+  max-width:var(--measure);
+}
+.section .wrap > p.seealso a{
+  color:var(--nettle);
+  font-weight:650;
+  text-decoration:underline;
+  text-decoration-thickness:.08em;
+  text-underline-offset:.18em;
+}
+.section .wrap > p.seealso a:hover{color:var(--ember)}
+.section .wrap > p.seealso a::before{content:"\2192\00a0"}
