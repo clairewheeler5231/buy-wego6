@@ -569,6 +569,9 @@ footer{margin-top:0}
    centred its lines on x=486 (max-width with no auto margin), the legal links
    started at x=180, and the copyright centred on x=720 — 234px apart. */
 footer .disclosure{margin-inline:auto;margin-bottom:18px;text-align:center}
+.prefsrc{margin:0 0 16px;text-align:center;font-size:14px}
+.prefsrc a{color:#B9D6D0;text-decoration:underline;text-underline-offset:3px}
+.prefsrc a:hover{color:#fff}
 footer .legal{justify-content:center}
 footer .copy{text-align:center}
 
