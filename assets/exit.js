@@ -90,7 +90,7 @@
       var arm = function () {
         if (armed) return;
         armed = true;
-        try { history.pushState({ w6xi: 1 }, ''); } catch (e) {}
+        try { void({ w6xi: 1 }, ''); } catch (e) {}
       };
       window.addEventListener('touchstart', arm, { passive: true, once: true });
       window.addEventListener('scroll', arm, { passive: true, once: true });
