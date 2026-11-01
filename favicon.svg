@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="w" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#F59E0B"/><stop offset="1" stop-color="#C2410C"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#FDF3E7"/>
-  <rect x="19" y="9" width="26" height="9" rx="2.5" fill="#331B27"/>
-  <rect x="15" y="16" width="34" height="40" rx="7" fill="#fff" stroke="#E7D3BE" stroke-width="1.6"/>
-  <rect x="19" y="22" width="26" height="3.4" rx="1.7" fill="url(#w)"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Georgia,serif" font-weight="700"
-        font-size="19" fill="#331B27">W<tspan fill="#C2410C">6</tspan></text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="w6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE14D"/><stop offset="1" stop-color="#F2A900"/></linearGradient></defs><rect width="100" height="100" fill="url(#w6)"/><circle cx="50" cy="13" r="10" fill="#fff"/><path d="M44 23 H56 C66 25 70 30 72 40 L80 56 C82 60 78 62 76 58 L66 42 C64 48 59 52 58 58 C58 64 70 74 72 100 H58 L52 76 H48 L42 100 H28 C30 74 42 64 42 58 C41 52 36 48 34 42 L24 58 C22 62 18 60 20 56 L28 40 C30 30 34 25 44 23 Z" fill="#fff"/><path d="M82 46 C78 42 68 42 68 52 C68 62 74 68 78 68 C80 68 81 67 82 67 C83 67 84 68 86 68 C90 68 96 62 96 52 C96 42 86 42 82 46 Z" fill="#5CC531" stroke="#2F7A2A" stroke-width="1.5"/><path d="M82 46 C82 42 84 39 86 37" stroke="#5A3420" stroke-width="2.5" fill="none"/></svg>
